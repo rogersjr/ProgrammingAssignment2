@@ -1,7 +1,8 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This function creates a special "matrix" object that can cache its inverse to reduce processing resources
+## by allowing the matrix inversion to be reused instead of being recalculated
 
-## Write a short comment describing this function
+## The makeCacheMatrix function uses the R solve() function to invert a square and save the results in the global environment
+## if the matrix has already been cached and save it is not solved again
 
 makeCacheMatrix <- function(x = maxtrix()) {
 	m <- NULL
@@ -24,7 +25,8 @@ makeCacheMatrix <- function(x = maxtrix()) {
 }
 
 
-## Write a short comment describing this function
+## The cacheSolve() function works with the makeCacheMatrix() function to reduce resources required to solve a square
+## matrix
 
 cacheSolve <- function(x, ...) {
 
